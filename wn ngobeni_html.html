@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Congratulations, Babe!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #ffe6f0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .container {
+      max-width: 700px;
+      padding: 40px;
+      background-color: #fff0f5;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+      z-index: 1;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #d63384;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      font-size: 1.3em;
+      color: #880e4f;
+      line-height: 1.6em;
+    }
+
+    /* Confetti styles */
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #ff69b4;
+      opacity: 0.7;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Congratulations, Babe!</h1>
+    <p>I’m so proud of you for landing your new position!<br>
+       You deserve every bit of success coming your way.<br>
+       You worked so hard for this and I couldn't be happier for you. 💪👑</p>
+  </div>
+
+  <!-- Confetti generator -->
+  <script>
+    const confettiColors = ['#ff69b4', '#ffb6c1', '#ffc0cb', '#ff1493', '#ff8da1'];
+    const confettiCount = 100;
+
+    for (let i = 0; i < confettiCount; i++) {
+      let confetti = document.createElement('div');
+      confetti.classList.add('confetti');
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      confetti.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+      confetti.style.animationDelay = (Math.random() * 5) + 's';
+      document.body.appendChild(confetti);
+    }
+  </script>
+</body>
+</html>
